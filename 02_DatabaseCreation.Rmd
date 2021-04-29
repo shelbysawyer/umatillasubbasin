@@ -1,0 +1,25 @@
+# Chapter 1: Database Creation
+
+This database is sourced from the open-source data provided by DeBano et al., 2016, which I accessed through Dryad. This data was collected to better understand the influences of climate change and agriculture on aquatic habitat in the Umatilla Sub-Basin. I used a relational database to house my data:
+
+![Figure 2.1. Diagram of my Umatilla Sub-Basin database](C:\Users\A00637024\Desktop\WILD6900_FinalProject\FinalProject\figures)
+
+The database has 2 tables: *reaches* and *flows*. The *reaches* table contains information on the individual reaches with temperature data available, including what river the reach belongs to, the GPS location of the reach, the elevation, and the temperature. The *flows* table contains information on individual reaches that I have information on flows for, including reach length, upstream drainage area, the current flow rate, the predicted flow rates for years 2040 and 2080, and the land use setting. Primary keys are shown in italics and foreign keys are shown in bold. 
+
+I created a database in RSQLite to house the data.
+
+UmatillaSubBasin_db <-dbConnect(RSQLite::SQLite(), "UmatillaSubBasin.db")
+##2.1  
+
+UmatillaSubBasin_db <-dbConnect(RSQLite::SQLite(), "UmatillaSubBasin.db")
+
+## Including Plots
+
+You can also embed plots, for example:
+
+```{r create database, eval = FALSE}
+UmatillaSubBasin_db <-dbConnect(RSQLite::SQLite(), "UmatillaSubBasin.db")
+
+```
+
+Note that the `echo = FALSE` parameter was added to the code chunk to prevent printing of the R code that generated the plot.

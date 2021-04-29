@@ -4,6 +4,8 @@ library(tidyverse)
 library(viridis)
 library(patchwork)
 library(ggplot2)
+install.packages("rmarkdown")
+install.packages("knitr")
 
 # Create new database in RSQLite
 
@@ -66,7 +68,7 @@ dbWriteTable(UmatillaSubBasin_db, "flows", flows, append = TRUE)
 dbGetQuery(UmatillaSubBasin_db, "SELECT * FROM flows LIMIT 10;")
 
 # Create a plot to show the distribution of stream temperature across the 
-# elevation gradient among sampled reaches
+# elevation gradient among sampled reaches (chapter 3)
 
 reaches %>%
   ggplot() +
@@ -79,7 +81,6 @@ reaches %>%
   theme(legend.position = "bottom")
 
 # Create a map of the reaches and color code by the agricultural intensity
-# Seems to be mapping correctly, but I can't it to color code by system_id
 
 flows %>%
   left_join(reaches, by = "reach_name") %>%
@@ -92,6 +93,26 @@ flows %>%
         color = 'Agricultural Intensity') +
   theme_minimal()
 
+# Determine the 10 reaches that will experience the greatest decrease (as a
+# percent) in low flow rates between 2040 and 2080
+
+flows$difference <- ((flows$lowflow_2040_cfs - flows$lowflow_2080_cfs) / 
+  flows$lowflow_2040_cfs) * 100
+
+flows_sort <- flows[order(-flows$difference),]
+
+flows_top10 <- flows_sort[1:10,]
+
+write.csv(flows_top10, "data\\flows_top10.csv", row.names = FALSE)
+
+
+
+  
+  
+  
+  
+  
+  
 
 
 

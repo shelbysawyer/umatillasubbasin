@@ -1,0 +1,25 @@
+---
+title: "Umatilla Sub-Basin"
+author: "Shelby Sawyer"
+date: "4/29/2021"
+output: html_document
+---
+
+# Chapter 1: Introduction
+
+## 1.1 Project Goals
+
+The main objective of this project is to demonstrate some of the skills I've learned in WILD6900: Computational Tools for Reproducible Science. In the following chapters, I will explore the open-source data from DeBano et al., 2016 and try to answer some questions about the Umatilla Sub-Basin.
+
+## 1.2 Project Goals
+This book is composed of the following Chapters:
+- Chapter 2, Database Creation
+- Chapter 3, Stream Reach Temperature across the Elevation Gradient
+- Chapter 4, Agricultural Intensity of Reach Locations
+- Chapter 5, Climate Change - Priority Reaches
+
+## 1.3 The Umatilla Sub-Basin
+
+The Umatilla River is located in northern Oregon, USA. The river flows roughly 89 miles from the Blue Mountains before joining with the Colombia River at Lake Umatilla, a large reservoir formed by the John Day Dam.
+
+The Umatilla provides water for drinking, agricultural irrigation, and recreation, as well as significant fish and wildlife habitat. Notably, the river supports populations of native Chinook salmon, Coho salmon, and steelhead, making it a popular destination for anglers. It also serves as a valuable cultural resource to the Umatilla Indian Reservation.
